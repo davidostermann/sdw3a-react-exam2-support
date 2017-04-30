@@ -2,13 +2,13 @@
 
 # Consignes
 
-1. Forker le projet
+## 1. Forker le projet
 
-2. Créer votre pull request avec nom prénom
+## 2. Créer votre pull request avec nom prénom
 
-3. Cloner votre fork
+## 3. Cloner votre fork
 
-4. Implémenter les fonctionnalités suivantes :
+## 4. Implémenter les fonctionnalités suivantes :
 
 En partant de l'application react présente dans le dossier "client", vous devez implémenter un back-office permettant de :
 
@@ -24,7 +24,7 @@ En partant de l'application react présente dans le dossier "client", vous devez
 
 Le tout doit être connecté au backend servi en http://localhost:5000
 
-5. Une fois le travail terminé, ajouter un commentaire "terminé" à  votre pull-request
+## 5. Une fois le travail terminé, ajouter un commentaire "terminé" à  votre pull-request
 
 # Aides & indices
 
