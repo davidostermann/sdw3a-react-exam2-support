@@ -19,7 +19,6 @@ router.get('/', (req, res) => {
 });
 
 router.get('/users', (req, res) => {
-
   User.find()
   .exec((err, users) => {
     if (err) { res.send(err); }
@@ -44,7 +43,6 @@ router.post('/user', (req, res) => {
 });
 
 router.get('/user/:id', (req, res) => {
-
   User.findOne({_id: req.params.id})
   .exec((err, user) => {
     if (err) { res.send(err); }
@@ -64,9 +62,6 @@ router.get('/user/:id/projects', (req, res) => {
 });
 
 router.put('/user/:id', (req, res) => {
-
-  console.log('req.params.id : ', req.params.id)
-
   User.findByIdAndUpdate(req.params.id, { $set: req.body}, {new: true}, (err, user) => {
     console.log('user : ', user)
     if (err) {
@@ -77,7 +72,6 @@ router.put('/user/:id', (req, res) => {
 });
 
 router.delete('/user/:id', (req, res) => {
-
   User.findByIdAndRemove(req.params.id, (err) => {
     if (err) {
       return res.send(err).status(500);
@@ -113,13 +107,7 @@ router.post('/project', (req, res) => {
 });
 
 router.put('/project/:id', (req, res) => {
-
-  console.log('req.params.id : ', req.params.id);
-
   Project.findByIdAndUpdate(req.params.id, { $set: req.body}, {new: true}, (err, project) => {
-
-    console.log('project : ', project);
-
     if (err) {
       return res.send(err).status(500);
     }
@@ -128,12 +116,12 @@ router.put('/project/:id', (req, res) => {
 });
 
 router.delete('/project/:id', (req, res) => {
-
-  Project.findByIdAndRemove(req.params.id, (err) => {
+  Project.findByIdAndRemove(req.params.id, (err, project) => {
     if (err) {
       return res.send(err).status(500);
     }
-    res.json({ message: 'User deleted!' })
+    let str = (project) ? `Project ${project._id} deleted !` : 'No project were deleted.'
+    res.json({ message: str })
   });
 });
 
