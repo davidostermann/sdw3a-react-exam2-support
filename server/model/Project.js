@@ -6,7 +6,8 @@ const ProjectSchema = new Schema({
     'ref': 'User',
     'type': Schema.Types.ObjectId
   },
-  'title': String
+  'title': String,
+  'description': String
 });
 
 module.exports = mongoose.model('Project', ProjectSchema);
