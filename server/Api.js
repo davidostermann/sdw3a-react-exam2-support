@@ -10,7 +10,7 @@ const bodyParser = require('body-parser');
 const router = Router();
 
 if(process.env.NODE_ENV == 'production') {
-  mongoose.connect(`mongodb://${process.env.MLAB_DBUSER}:${process.env.MLAB_DBPASSWORD}@${process.env.MLAB_DBURL}`);
+  mongoose.connect(process.env.DATABASE);
 } else {
   mongoose.connect('mongodb://localhost:27017/kickass');
 }
