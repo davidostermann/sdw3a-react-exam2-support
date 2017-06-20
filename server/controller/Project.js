@@ -18,6 +18,7 @@ const ProjectController = {
     project.title = req.body.title;
     project.description = req.body.description;
     project._creator = req.body.creator;
+    project.description = req.body.description;
     project.save((err) => {
       if (err) {
         return res.send(err);
